@@ -25,10 +25,10 @@ def generate_ecg(t, heart_rate=60, noise_std=0.05):
 # Generating synthetic ECG signal
 ecg_signal = generate_ecg(t)
 
-# Label synthetic data (randomly for demo purposes)
+
 labels = np.random.choice([0, 1], len(ecg_signal))  # 0 for Normal, 1 for Abnormal
 
-# Reshaping data for model input (e.g., 100-sample segments)
+
 segment_length = 100
 X = np.array([ecg_signal[i:i+segment_length] for i in range(0, len(ecg_signal) - segment_length)])
 y = labels[:len(X)]
@@ -53,7 +53,7 @@ ax.set_ylim(-0.5, 1.5)
 line, = ax.plot([], [], lw=2)
 label_text = ax.text(1.5, 1.2, '', fontsize=15, color='red')
 
-# Animatiing the graph function using the 1st declared code block
+# Animating the graph function using the 1st declared code block
 def update(frame):
     start_idx = frame
     end_idx = start_idx + int(duration * fs)
